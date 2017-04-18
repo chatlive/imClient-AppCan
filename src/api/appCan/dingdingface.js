@@ -1,0 +1,313 @@
+let emoarr = [{
+	name: "微笑",
+	src: "wgtRes/dingdingface/emotion_001.png",
+	id: "default:1"
+}, {
+	name: "憨笑",
+	src: "wgtRes/dingdingface/emotion_002.png",
+	id: "default:2"
+}, {
+	name: "色",
+	src: "wgtRes/dingdingface/emotion_003.png",
+	id: "default:3"
+}, {
+	name: "发呆",
+	src: "wgtRes/dingdingface/emotion_004.png",
+	id: "default:4"
+}, {
+	name: "老板",
+	src: "wgtRes/dingdingface/emotion_005.png",
+	id: "default:5"
+}, {
+	name: "流泪",
+	src: "wgtRes/dingdingface/emotion_006.png",
+	id: "default:6"
+}, {
+	name: "害羞",
+	src: "wgtRes/dingdingface/emotion_007.png",
+	id: "default:7"
+}, {
+	name: "闭嘴",
+	src: "wgtRes/dingdingface/emotion_008.png",
+	id: "default:8"
+}, {
+	name: "睡",
+	src: "wgtRes/dingdingface/emotion_009.png",
+	id: "default:9"
+}, {
+	name: "大哭",
+	src: "wgtRes/dingdingface/emotion_010.png",
+	id: "default:10"
+}, {
+	name: "尴尬",
+	src: "wgtRes/dingdingface/emotion_011.png",
+	id: "default:11"
+}, {
+	name: "发怒",
+	src: "wgtRes/dingdingface/emotion_012.png",
+	id: "default:12"
+}, {
+	name: "调皮",
+	src: "wgtRes/dingdingface/emotion_013.png",
+	id: "default:13"
+}, {
+	name: "大笑",
+	src: "wgtRes/dingdingface/emotion_014.png",
+	id: "default:14"
+}, {
+	name: "惊讶",
+	src: "wgtRes/dingdingface/emotion_015.png",
+	id: "default:15"
+}, {
+	name: "流汗",
+	src: "wgtRes/dingdingface/emotion_016.png",
+	id: "default:16"
+}, {
+	name: "广播",
+	src: "wgtRes/dingdingface/emotion_017.png",
+	id: "default:17"
+}, {
+	name: "阴笑",
+	src: "wgtRes/dingdingface/emotion_018.png",
+	id: "default:18"
+}, {
+	name: "你强",
+	src: "wgtRes/dingdingface/emotion_019.png",
+	id: "default:19"
+}, {
+	name: "怒吼",
+	src: "wgtRes/dingdingface/emotion_020.png",
+	id: "default:20"
+}, {
+	name: "惊愕",
+	src: "wgtRes/dingdingface/emotion_021.png",
+	id: "default:21"
+}, {
+	name: "疑问",
+	src: "wgtRes/dingdingface/emotion_022.png",
+	id: "default:22"
+}, {
+	name: "OK",
+	src: "wgtRes/dingdingface/emotion_023.png",
+	id: "default:23"
+}, {
+	name: "赞",
+	src: "wgtRes/dingdingface/emotion_078.png",
+	id: "default:78"
+}, {
+	name: "鼓掌",
+	src: "wgtRes/dingdingface/emotion_024.png",
+	id: "default:24"
+}, {
+	name: "握手",
+	src: "wgtRes/dingdingface/emotion_025.png",
+	id: "default:25"
+}, {
+	name: "偷笑",
+	src: "wgtRes/dingdingface/emotion_026.png",
+	id: "default:26"
+}, {
+	name: "无聊",
+	src: "wgtRes/dingdingface/emotion_027.png",
+	id: "default:27"
+}, {
+	name: "加油",
+	src: "wgtRes/dingdingface/emotion_028.png",
+	id: "default:28"
+}, {
+	name: "快哭了",
+	src: "wgtRes/dingdingface/emotion_029.png",
+	id: "default:29"
+}, {
+	name: "吐",
+	src: "wgtRes/dingdingface/emotion_030.png",
+	id: "default:30"
+}, {
+	name: "晕",
+	src: "wgtRes/dingdingface/emotion_031.png",
+	id: "default:31"
+}, {
+	name: "胜利",
+	src: "wgtRes/dingdingface/emotion_033.png",
+	id: "default:33"
+}, {
+	name: "摸摸",
+	src: "wgtRes/dingdingface/emotion_032.png",
+	id: "default:32"
+}, {
+	name: "飞吻",
+	src: "wgtRes/dingdingface/emotion_034.png",
+	id: "default:34"
+}, {
+	name: "跳舞",
+	src: "wgtRes/dingdingface/emotion_035.png",
+	id: "default:35"
+}, {
+	name: "傻笑",
+	src: "wgtRes/dingdingface/emotion_036.png",
+	id: "default:36"
+}, {
+	name: "鄙视",
+	src: "wgtRes/dingdingface/emotion_037.png",
+	id: "default:37"
+}, {
+	name: "嘘",
+	src: "wgtRes/dingdingface/emotion_038.png",
+	id: "default:38"
+}, {
+	name: "衰",
+	src: "wgtRes/dingdingface/emotion_039.png",
+	id: "default:39"
+}, {
+	name: "思考",
+	src: "wgtRes/dingdingface/emotion_040.png",
+	id: "default:40"
+}, {
+	name: "亲亲",
+	src: "wgtRes/dingdingface/emotion_041.png",
+	id: "default:41"
+}, {
+	name: "无奈",
+	src: "wgtRes/dingdingface/emotion_042.png",
+	id: "default:42"
+}, {
+	name: "感冒",
+	src: "wgtRes/dingdingface/emotion_043.png",
+	id: "default:43"
+}, {
+	name: "对不起",
+	src: "wgtRes/dingdingface/emotion_044.png",
+	id: "default:44"
+}, {
+	name: "再见",
+	src: "wgtRes/dingdingface/emotion_045.png",
+	id: "default:45"
+}, {
+	name: "投降",
+	src: "wgtRes/dingdingface/emotion_046.png",
+	id: "default:46"
+}, {
+	name: "哼",
+	src: "wgtRes/dingdingface/emotion_047.png",
+	id: "default:47"
+}, {
+	name: "欠扁",
+	src: "wgtRes/dingdingface/emotion_048.png",
+	id: "default:48"
+}, {
+	name: "恭喜",
+	src: "wgtRes/dingdingface/emotion_049.png",
+	id: "default:49"
+}, {
+	name: "可怜",
+	src: "wgtRes/dingdingface/emotion_050.png",
+	id: "default:50"
+}, {
+	name: "舒服",
+	src: "wgtRes/dingdingface/emotion_051.png",
+	id: "default:51"
+}, {
+	name: "爱意",
+	src: "wgtRes/dingdingface/emotion_052.png",
+	id: "default:52"
+}, {
+	name: "单挑",
+	src: "wgtRes/dingdingface/emotion_053.png",
+	id: "default:53"
+}, {
+	name: "财迷",
+	src: "wgtRes/dingdingface/emotion_054.png",
+	id: "default:54"
+}, {
+	name: "迷惑",
+	src: "wgtRes/dingdingface/emotion_055.png",
+	id: "default:55"
+}, {
+	name: "委屈",
+	src: "wgtRes/dingdingface/emotion_056.png",
+	id: "default:56"
+}, {
+	name: "灵感",
+	src: "wgtRes/dingdingface/emotion_057.png",
+	id: "default:57"
+}, {
+	name: "天使",
+	src: "wgtRes/dingdingface/emotion_058.png",
+	id: "default:58"
+}, {
+	name: "鬼脸",
+	src: "wgtRes/dingdingface/emotion_059.png",
+	id: "default:59"
+}, {
+	name: "凄凉",
+	src: "wgtRes/dingdingface/emotion_060.png",
+	id: "default:60"
+}, {
+	name: "郁闷",
+	src: "wgtRes/dingdingface/emotion_061.png",
+	id: "default:61"
+}, {
+	name: "邪恶",
+	src: "wgtRes/dingdingface/emotion_063.png",
+	id: "default:63"
+}, {
+	name: "忍者",
+	src: "wgtRes/dingdingface/emotion_066.png",
+	id: "default:64"
+}, {
+	name: "色情狂",
+	src: "wgtRes/dingdingface/emotion_065.png",
+	id: "default:65"
+}, {
+	name: "算账",
+	src: "wgtRes/dingdingface/emotion_064.png",
+	id: "default:66"
+}, {
+	name: "炸弹",
+	src: "wgtRes/dingdingface/emotion_067.png",
+	id: "default:67"
+}, {
+	name: "邮件",
+	src: "wgtRes/dingdingface/emotion_068.png",
+	id: "default:68"
+}, {
+	name: "电话",
+	src: "wgtRes/dingdingface/emotion_069.png",
+	id: "default:69"
+}, {
+	name: "礼物",
+	src: "wgtRes/dingdingface/emotion_070.png",
+	id: "default:70"
+}, {
+	name: "爱心",
+	src: "wgtRes/dingdingface/emotion_071.png",
+	id: "default:71"
+}, {
+	name: "心碎",
+	src: "wgtRes/dingdingface/emotion_072.png",
+	id: "default:72"
+}, {
+	name: "嘴唇",
+	src: "wgtRes/dingdingface/emotion_073.png",
+	id: "default:73"
+}, {
+	name: "鲜花",
+	src: "wgtRes/dingdingface/emotion_074.png",
+	id: "default:74"
+}, {
+	name: "残花",
+	src: "wgtRes/dingdingface/emotion_075.png",
+	id: "default:75"
+}, {
+	name: "出差",
+	src: "wgtRes/dingdingface/emotion_076.png",
+	id: "default:76"
+}, {
+	name: "干杯",
+	src: "wgtRes/dingdingface/emotion_077.png",
+	id: "default:77"
+}];
+
+export default {
+	emoarr,
+}
