@@ -1,10 +1,9 @@
-import imSignalR from 'api/imConfig'
 
 /**
  * 应用程序Id
  * 状态
  */
-let APPID = imSignalR.AppID
+let APPID = ''
 
 /**
  * 全屏模式

@@ -16,10 +16,6 @@ imSignalR.url = baseUrl.imUrl;
  * （$.connection.hub.logging）
  */
 imSignalR.logging = false;
-/**
- * App标识
- */
-imSignalR.AppID = "00000000-0000-0000-0000-000000000000";
 
 /**
  * 获取登录标识

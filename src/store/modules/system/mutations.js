@@ -23,6 +23,7 @@ const sys_closeFullscreen = (state) => {
 const sys_setUser = (state, newUser) => {
 	//官方没有说明对象结构模式应用在module
 	//必须单独赋值
+	state.APPID = newUser.appID
 	state.user.account = newUser.account
 	state.user.img = newUser.img
 	state.user.name = newUser.name

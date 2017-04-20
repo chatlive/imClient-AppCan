@@ -1,8 +1,8 @@
 /**
  * 前缀-登录
  */
-let prefix_login = "http://192.168.30.32:9092/";
-//let prefix_login = "http://localhost:21120/";
+let prefix_login = "http://192.168.30.32:9090/";
+//let prefix_login = "http://localhost:49208/";
 
 /**
  * 前缀-im
@@ -15,7 +15,7 @@ let prefix_im = "http://192.168.30.32:9090/";
 /**
  * 登录地址
  */
-const loginUrl = prefix_login + "api/account/login";
+const loginUrl = prefix_login + "api/Chat/Login";
 
 /**
  * url

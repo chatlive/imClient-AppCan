@@ -5,19 +5,21 @@ import TYPES from 'store/modules/imchat/types'
 import upload from 'api/appCan/upload'
 
 /**
- * 单聊
+ * 是否单聊
  */
-let SINGLE = STORE.state.imchat.sessionType.single;
+const is_SINGLE = function() {
+	let reuslt =
+		STORE.state.imchat.sessionType.single === STORE.state.imchat.currentSession.sessionType;
+	return reuslt;
+};
+
 /**
- * 群聊
+ * 是否群聊
  */
-let GROUP = STORE.state.imchat.sessionType.group;
-/**
- * 获取当前会话类型
- */
-const getSessionType = function() {
-	let sessionType = STORE.state.imchat.currentSession.sessionType
-	return sessionType;
+const is_GROUP = function() {
+	let reuslt =
+		STORE.state.imchat.sessionType.group === STORE.state.imchat.currentSession.sessionType;
+	return reuslt;
 };
 
 /**
@@ -148,13 +150,12 @@ const sendMsg = function(emojiconsText) {
 	if(emojiconsText.trim() === '') {
 		return;
 	} else {
-		let sessionType = getSessionType();
-		if(sessionType == SINGLE) {
+		if(is_SINGLE()) {
 
 			let msg = genMsgText(emojiconsText);
 			CHAT.Single.single_SendText(msg);
 			STORE.dispatch(TYPES.IMCHAT_ACTION_SENDMESSAGE, msg);
-		} else if(sessionType == GROUP) {
+		} else if(is_GROUP()) {
 
 			let msg = genMsgText_Group(emojiconsText);
 			CHAT.Group.group_SendText(msg);
@@ -175,12 +176,11 @@ const sendpic = function(localPath) {
 			function(serverPath) {
 				if(serverPath != null) {
 
-					let sessionType = getSessionType();
-					if(sessionType == SINGLE) {
+					if(is_SINGLE()) {
 						let msg = genMsgPic(serverPath);
 						CHAT.Single.single_SendPicture(msg);
 						STORE.dispatch(TYPES.IMCHAT_ACTION_SENDMESSAGE, msg);
-					} else if(sessionType == GROUP) {
+					} else if(is_GROUP()) {
 
 						let msg = genMsgPic_Group(serverPath);
 						CHAT.Group.group_SendPicture(msg);
@@ -214,12 +214,11 @@ const sendfile = function(localPath) {
 			function(serverPath) {
 				if(serverPath != null) {
 
-					let sessionType = getSessionType();
-					if(sessionType == SINGLE) {
+					if(is_SINGLE()) {
 						let msg = genMsgFile(serverPath);
 						CHAT.Single.single_SendFile(msg);
 						STORE.dispatch(TYPES.IMCHAT_ACTION_SENDMESSAGE, msg);
-					} else if(sessionType == GROUP) {
+					} else if(is_GROUP()) {
 
 						let msg = genMsgFile_Group(serverPath);
 						CHAT.Group.group_SendFile(msg);

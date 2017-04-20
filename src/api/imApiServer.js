@@ -400,7 +400,7 @@ const group_SendText = function({
  * @param {Object} message
  */
 const hello = function(message) {
-	let who = IMCOMMON.getApp__Account();
+	let who = IMCOMMON.getApp__Account(STORE.state.system.APPID);
 
 	server.hello(who, message)
 		.done(function(data) { //服务器端有返回值，无返回值

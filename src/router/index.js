@@ -146,7 +146,6 @@ var router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-	console.log("全局路由钩子beforeEach:" + to.path);
 	let isLogin = to.path === "/" || to.path === "/Login";
 	if(STORE.state.system.user.account === "" && !isLogin) {
 		//没有登录则跳转到登录页面

@@ -32,16 +32,16 @@
 <script>
 	import { mapState, mapGetters, mapMutations } from 'vuex'
 	import TYPES from 'store/modules/system/types'
-	import baseUrl from 'api/baseUrl'
-	import APPAPPCAN from 'api/appAppCan'
+	import STORE from 'store/index'
 	import router from 'router/index'
-	import CHAT from 'api/imService'
+	import loginService from 'api/loginService'
 
 	export default {
 		name: 'login',
 		components: {},
 		data() {
 			return {
+				loginAppKey: '00000000-0000-0000-0000-000000000000',
 				loginAccount: '',
 				loginPassword: '',
 				btnEnable: false
@@ -56,45 +56,43 @@
 			...mapMutations({
 				open: TYPES.sys_mutation_openFullscreen,
 				close: TYPES.sys_mutation_closeFullscreen,
-				setUser: TYPES.sys_mutation_setUser,
 			}),
+			getParam: function(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null)
+					return(r[2]);
+				return null;
+			},
 			login: function() {
 				this.btnEnable = true;
-				let loginUser = {
-					'account': this.loginAccount,
-					'password': this.loginPassword
-				};
-				this.$http.get(baseUrl.loginUrl, { params: loginUser })
-					.then(this.loginCallback)
-					.catch((response) => {
-						console.log(response)
-					});
+				loginService.login(this.loginAppKey, this.loginAccount, this.page_Callback);
 			},
-			loginCallback: function(response) {
-				let data = response.data;
-				if(data.status) {
+			urlLogin: function() {
+
+				let appkey = this.getParam("appkey");
+				let account = this.getParam("account");
+
+				if(appkey != null && account != null && appkey.length === 36) {
+
+					console.log(`urlLogin...登录开始,appkey=${appkey},account=${account}`);
+					this.loginAppKey = appkey;
+					loginService.login(appkey, account, this.page_Callback);
+				} else {
+					console.log(`urlLogin...登录失败,appkey=${appkey},account=${account}`);
+				}
+			},
+			page_Callback: function(data) {
+				if(data.status) { //登录成功
 					this.btnEnable = true;
-					var user = {
-						account: data.user.account,
-						name: data.user.name,
-						img: data.user.img
-					}
 					this.savePassword();
-					this.setUser(user);
-					CHAT.initialize(this.$store.state.system.user.account, this.successCallback);
 					this.close();
 					router.push('news');
-				} else {
+				} else { //登录失败
 					this.btnEnable = false;
-					alert(data.msg);
+					console.log(data.msg);
+					//					alert(data.msg);
 				}
-				console.log(data);
-			},
-			successCallback: function() {
-				CHAT.FriendGroup.fG_GetGroups();
-				CHAT.FriendGroup.fG_GetFriends();
-				CHAT.Chatter.chatter_ChatterInfo();
-				APPAPPCAN.init();
 			},
 			savePassword: function() {
 				localStorage.setItem('loginAccount', this.loginAccount);
@@ -111,6 +109,9 @@
 		},
 		created() {
 			this.getPassword();
+
+			console.log(`login_created`);
+			this.urlLogin();
 		},
 	}
 </script>

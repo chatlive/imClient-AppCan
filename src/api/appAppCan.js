@@ -254,7 +254,8 @@ const getInputBarHeight = function() {
  */
 const quit = function() {
 	CHAT.ClientManage.stopClient();
-	uexWidgetOne.exit();
+	appcan.frame.close('imClient');
+	//	uexWidgetOne.exit();
 };
 
 let appAppCan = {

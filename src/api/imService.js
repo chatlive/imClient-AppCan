@@ -27,14 +27,15 @@ const imService = {};
 /**
  * 初始化服务(连接通讯)
  * @param {String} account 账户标识
+ * @param {Object} appID 应用程序ID
  * @param {Object} successCallback 连接成功处理函数
  */
-const _initialize = function(account, successCallback) {
+const _initialize = function(account, appID, successCallback) {
 
 	//hub远程地址
 	hub.url = imSignalR.url;
 	//hub连接queryString参数集合
-	hub.qs = imSignalR.qs(imSignalR.AppID, account);
+	hub.qs = imSignalR.qs(appID, account);
 	//hub控制台日志功能
 	hub.logging = imSignalR.logging;
 
